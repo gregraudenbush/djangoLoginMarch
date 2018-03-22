@@ -1,0 +1,40 @@
+* {
+    background-color: rgb(255, 255, 255);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+.button {
+    background-color: rgb(17, 228, 228); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.button:hover {
+    background-color: rgb(35, 135, 153); /* Green */
+    color: white;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+table {
+    width: 100%;
+}
+.regtd{
+    border-bottom: none;
+    text-align: left;
+}
+.reg {
+    width: 25%;
+}
+.regdiv {
+    display: inline-block;
+    vertical-align: top;
+}

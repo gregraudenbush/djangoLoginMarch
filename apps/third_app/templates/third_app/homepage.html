@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load staticfiles %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'third_app/style.css' %}" media="screen" title="no title"  charset="utf-8">
+  
+    <title>Homepage</title>
+</head>
+<body>
+    <a href="/logout"><button class="button">Log Out</button></a>
+    <br>
+    <br>
+    <h2>Hello {{request.session.alias}}</h2>
+    
+
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Alias</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Added</th>
+
+        </tr>
+        {% for x in users %}
+        <tr>
+            <td>{{x.first_name}}</td>
+            <td>{{x.last_name}}</td>
+            <td>{{x.alias}}</td>
+            <td>{{x.email}}</td>
+            <td>{{x.dob}}</td>
+            <td>{{x.added}}</td>
+            <td class="regtd"><a href="/user/{{x.id}}"><button class="button">View</button></a></td>
+        </tr>
+        
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

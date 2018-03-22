@@ -1,0 +1,126 @@
+<html>
+    <head>
+
+       {% load staticfiles %}
+      <!-- The line above tells Django to be ready to listen for static files -->
+      <link rel="stylesheet" href="{% static 'third_app/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+
+        <h1> Wel.com </h1>
+            {% if messages %}
+                {% for message in messages %}
+                    <h1 style="color: red">{{ message }}</h1>
+                {% endfor %}   
+            {% endif %}     
+        
+            <div class="regdiv">
+                <h2>Login</h2>
+                <table class="reg">
+    
+                    <form action="/login" method = "post">
+                        {% csrf_token %}
+                        <tr>
+                            <td class="regtd">
+    
+                                <label for=""> Email</label>
+                            </td>
+                            <td class="regtd">
+                                <input type="text" name="email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="regtd">
+                                <label for=""> Password</label>
+                            </td>
+    
+                            <td class="regtd">
+                                <input type="password" name="password">
+                            </td>
+                            
+                        </tr>
+                        <tr>
+    
+                            <td class="regtd">
+                            </td>
+                            <td class="regtd">
+                                <button class="button">Log In</button>
+                            </td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+        <div class="regdiv">
+            <h2>Registration</h2>
+                <table class="reg">
+                    <form action="/val" method = "post">
+                        {% csrf_token %}
+                        <tr>
+                            <td class="regtd">
+                                <label for=""> First Name</label>
+                            </td>
+                            <td class="regtd">
+                                <input type="text" name="first_name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="regtd">
+                                <label for=""> Last Name</label>
+                            </td >
+                            <td class="regtd">
+                                <input type="text" name="last_name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="regtd">
+                                <label for=""> Alias</label>
+                            </td>
+                            <td class="regtd">
+                                <input type="text" name="alias">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="regtd">
+                                <label for=""> Email</label>
+                            </td>
+                            <td class="regtd">
+                                <input type="text" name="email">
+                            </td class="regtd">
+                        </tr>
+                        <tr>
+                            <td class="regtd">
+
+                                <label for=""> Password</label>
+                            </td>
+                            <td class="regtd">
+                                <input type="password" name="password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="regtd">
+                                <label for=""> Confirm Password</label>
+                            </td>
+                            <td class="regtd">
+                                <input type="password" name="password2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="regtd">
+                                <label for=""> Date of Birth</label>
+                            </td>
+                            <td class="regtd">
+                                <input type="date" name="dob">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="regtd"></td>
+                            <td class="regtd">
+                                <button class="button">Register</button>
+                            </td>
+                        </tr>
+                    </form>
+
+                </table>        
+        </div>
+    </body>
+</html>
